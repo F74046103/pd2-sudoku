@@ -12,6 +12,7 @@ class Sudoku{
 						     void rotate2(int n);
 							    void rotate3(int n);
 								   void flip(int n);
+								      void transform();
 								      int isAvailable(int puzzle[][9], int row, int col, int num);
 									     int fillSudoku(int puzzle[][9], int row, int col, int num);
 										    int isSolvable1();
