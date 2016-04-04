@@ -23,6 +23,7 @@ public:
    void rotate(int n);
    void flip(int n);
    void transform();
+   void qIsRight(int i,int j);
    int isSolvable1();
    int isSolvable2();
    void solve();
