@@ -236,6 +236,120 @@ int Sudoku::isSolvable1(){
        return 0;
 }
 
+void Sudoku::qIsRight(int i,int j){
+   if(map[i][j]!=0){
+      for(k=1;k<9;k++){
+         if(map[i][j]==map[i][(j+k)%9]){
+            cout<<"0"; exit(0);
+         }
+      }
+      for(k=1;k<9;k++){
+         if(map[i][j]==map[(i+k)%9][j]){
+            cout<<"0"; exit(0);
+         }
+      }
+      if(i%3==0&&j%3==0){
+         if(map[i][j]==map[i][j+1]){cout<<"0"; exit(0);}
+         if(map[i][j]==map[i][j+2]){cout<<"0"; exit(0);}
+         if(map[i][j]==map[i+1][j]){cout<<"0"; exit(0);}
+         if(map[i][j]==map[i+1][j+1]){cout<<"0"; exit(0);}
+         if(map[i][j]==map[i+1][j+2]){cout<<"0"; exit(0);}
+         if(map[i][j]==map[i+2][j]){cout<<"0"; exit(0);}
+         if(map[i][j]==map[i+2][j+1]){cout<<"0"; exit(0);}
+         if(map[i][j]==map[i+2][j+1]){cout<<"0"; exit(0);}
+         
+      }
+      if(i%3==0&&j%3==1){
+         if(map[i][j]==map[i][j-1]){cout<<"0"; exit(0);}
+         if(map[i][j]==map[i][j+1]){cout<<"0"; exit(0);}
+         if(map[i][j]==map[i+1][j-1]){cout<<"0"; exit(0);}
+         if(map[i][j]==map[i+1][j]){cout<<"0"; exit(0);}
+         if(map[i][j]==map[i+1][j+1]){cout<<"0"; exit(0);}
+         if(map[i][j]==map[i+2][j-1]){cout<<"0"; exit(0);}
+         if(map[i][j]==map[i+2][j]){cout<<"0"; exit(0);}
+         if(map[i][j]==map[i+2][j+1]){cout<<"0"; exit(0);}
+         
+      }
+      if(i%3==0&&j%3==2){
+         if(map[i][j]==map[i][j-1]){cout<<"0"; exit(0);}
+         if(map[i][j]==map[i][j-2]){cout<<"0"; exit(0);}
+         if(map[i][j]==map[i+1][j]){cout<<"0"; exit(0);}
+         if(map[i][j]==map[i+1][j-1]){cout<<"0"; exit(0);}
+         if(map[i][j]==map[i+1][j-2]){cout<<"0"; exit(0);}
+         if(map[i][j]==map[i+2][j]){cout<<"0"; exit(0);}
+         if(map[i][j]==map[i+2][j-1]){cout<<"0"; exit(0);}
+         if(map[i][j]==map[i+2][j-2]){cout<<"0"; exit(0);}
+         
+      }
+      if(i%3==1&&j%3==0){
+         if(map[i][j]==map[i-1][j]){cout<<"0"; exit(0);}
+         if(map[i][j]==map[i-1][j+1]){cout<<"0"; exit(0);}
+         if(map[i][j]==map[i-1][j+2]){cout<<"0"; exit(0);}
+         if(map[i][j]==map[i][j+1]){cout<<"0"; exit(0);}
+         if(map[i][j]==map[i][j+2]){cout<<"0"; exit(0);}
+         if(map[i][j]==map[i+1][j]){cout<<"0"; exit(0);}
+         if(map[i][j]==map[i+1][j+1]){cout<<"0"; exit(0);}
+         if(map[i][j]==map[i+1][j+2]){cout<<"0"; exit(0);}
+         
+      }
+      if(i%3==1&&j%3==1){
+         if(map[i][j]==map[i-1][j-1]){cout<<"0"; exit(0);}
+         if(map[i][j]==map[i-1][j]){cout<<"0"; exit(0);}
+         if(map[i][j]==map[i-1][j+1]){cout<<"0"; exit(0);}
+         if(map[i][j]==map[i][j-1]){cout<<"0"; exit(0);}
+         if(map[i][j]==map[i][j+1]){cout<<"0"; exit(0);}
+         if(map[i][j]==map[i+1][j-1]){cout<<"0"; exit(0);}
+         if(map[i][j]==map[i+1][j]){cout<<"0"; exit(0);}
+         if(map[i][j]==map[i+1][j+1]){cout<<"0"; exit(0);}
+         
+      }
+      if(i%3==1&&j%3==2){
+         if(map[i][j]==map[i-1][j]){cout<<"0"; exit(0);}
+         if(map[i][j]==map[i-1][j-1]){cout<<"0"; exit(0);}
+         if(map[i][j]==map[i-1][j-2]){cout<<"0"; exit(0);}
+         if(map[i][j]==map[i][j-1]){cout<<"0"; exit(0);}
+         if(map[i][j]==map[i][j-2]){cout<<"0"; exit(0);}
+         if(map[i][j]==map[i+1][j]){cout<<"0"; exit(0);}
+         if(map[i][j]==map[i+1][j-1]){cout<<"0"; exit(0);}
+         if(map[i][j]==map[i+1][j-2]){cout<<"0"; exit(0);}
+         
+      }
+      if(i%3==2&&j%3==0){
+         if(map[i][j]==map[i-2][j]){cout<<"0"; exit(0);}
+         if(map[i][j]==map[i-2][j+1]){cout<<"0"; exit(0);}
+         if(map[i][j]==map[i-2][j+2]){cout<<"0"; exit(0);}
+         if(map[i][j]==map[i-1][j]){cout<<"0"; exit(0);}
+         if(map[i][j]==map[i-1][j+1]){cout<<"0"; exit(0);}
+         if(map[i][j]==map[i-1][j+2]){cout<<"0"; exit(0);}
+         if(map[i][j]==map[i][j+1]){cout<<"0"; exit(0);}
+         if(map[i][j]==map[i][j+2]){cout<<"0"; exit(0);}
+         
+      }
+      if(i%3==2&&j%3==1){
+         if(map[i][j]==map[i-2][j-1]){cout<<"0"; exit(0);}
+         if(map[i][j]==map[i-2][j]){cout<<"0"; exit(0);}
+         if(map[i][j]==map[i-2][j+1]){cout<<"0"; exit(0);}
+         if(map[i][j]==map[i-1][j-1]){cout<<"0"; exit(0);}
+         if(map[i][j]==map[i-1][j]){cout<<"0"; exit(0);}
+         if(map[i][j]==map[i-1][j+1]){cout<<"0"; exit(0);}
+         if(map[i][j]==map[i-1][j-1]){cout<<"0"; exit(0);}
+         if(map[i][j]==map[i-1][j+1]){cout<<"0"; exit(0);}
+         
+      }
+      if(i%3==2&&j%3==2){
+         if(map[i][j]==map[i-2][j-2]){cout<<"0"; exit(0);}
+         if(map[i][j]==map[i-2][j-1]){cout<<"0"; exit(0);}
+         if(map[i][j]==map[i-2][j]){cout<<"0"; exit(0);}
+         if(map[i][j]==map[i-1][j-2]){cout<<"0"; exit(0);}
+         if(map[i][j]==map[i-1][j-1]){cout<<"0"; exit(0);}
+         if(map[i][j]==map[i-1][j]){cout<<"0"; exit(0);}
+         if(map[i][j]==map[i][j-2]){cout<<"0"; exit(0);}
+         if(map[i][j]==map[i][j-1]){cout<<"0"; exit(0);}
+         
+      }
+   }
+}
+      
 int Sudoku::isSolvable2(){   
     int puzzle[9][9];
     for(i=0;i<9;i++){
@@ -265,15 +379,16 @@ void Sudoku::solve(){
             b++;
          }
       }
-   }
-   if(b>70&&b<80){
-      cout<<"0";
-      exit(0);
    } 
    if(b==81){
       cout<<"2";
       exit(0);
    } 
+   for(i=0;i<9;i++){
+   	for(j=0;j<9;j++){
+   		qIsRight(i,j);
+	   }
+   }
    for(i=0;i<9;i++){
       for(j=0;j<9;j++){
          map2[i][j]=map[i][j];
